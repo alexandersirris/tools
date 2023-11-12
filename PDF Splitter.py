@@ -16,7 +16,7 @@ def split_pdf(input_pdf_path, max_size_mb=25):
         temp_filename = f"temp_split.pdf"
         output_pdf.save(temp_filename)
 
-        if os.path.getsize(temp_filename) > max_size_mb * 1024 * 1024: #select max file size to split
+        if os.path.getsize(temp_filename) > max_size_mb * 1024 * 1024: # select max file size to split
             # Remove last added page
             del output_pdf.pages[-1]
             output_pdf.save(output_filename)
